@@ -1,0 +1,5 @@
+displayName: "token_verification"
+type: middleware
+import: gitlab.unistra.fr/tacikbas/token_verification
+
+summary: 'Verification of the "auth" token existance'
