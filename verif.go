@@ -1,5 +1,5 @@
 // Package example a example plugin.
-package example
+package token_verification
 
 import (
 	"context"
@@ -22,13 +22,12 @@ type Token struct {
 
 // New created a new plugin.
 func New(ctx context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
-	
 	return &Token{
 		next: next,
 		name: name,
 	}, nil
 }
 
-func (e *Example) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
+func (t *Token) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	rw.Write([]byte("Hello World\n"))
 }
