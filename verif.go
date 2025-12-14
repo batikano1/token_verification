@@ -1,5 +1,5 @@
 // Package example a example plugin.
-package token_verification
+package tokenverification
 
 import (
 	"context"
