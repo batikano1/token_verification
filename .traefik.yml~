@@ -1,4 +1,4 @@
-displayName: "token_verification"
+displayName: "tokenverification"
 type: middleware
 import: github.com/batikano1/token_verification
 

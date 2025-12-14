@@ -1,0 +1,3 @@
+module github.com/batikano1/tokenv_erification
+
+go 1.22.2
