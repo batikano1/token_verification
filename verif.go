@@ -7,33 +7,28 @@ import (
 )
 
 // Config the plugin configuration.
-type Config struct {
-	// ...
-}
+type Config struct {}
 
 // CreateConfig creates the default plugin configuration.
 func CreateConfig() *Config {
-	return &Config{
-		// ...
-	}
+	return &Config()
 }
 
 // Example a plugin.
-type Example struct {
+type Token struct {
 	next     http.Handler
 	name     string
-	// ...
 }
 
 // New created a new plugin.
 func New(ctx context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
-	// ...
-	return &Example{
-		// ...
+	
+	return &Token{
+		next: next,
+		name: name,
 	}, nil
 }
 
 func (e *Example) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-	// ...
-	e.next.ServeHTTP(rw, req)
+	rw.Write([]byte("Hello World\n"))
 }
